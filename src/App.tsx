@@ -1,8 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { fetchHistory } from './api';
 
 function App() {
+  React.useEffect(() => {
+    fetchHistory("567").then(console.log);
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
