@@ -1,0 +1,7 @@
+.ProposalPanel {
+  padding: 10rem 0;
+}
+
+.ProposalPanel.bp3-non-ideal-state {
+  height: 50%;
+}

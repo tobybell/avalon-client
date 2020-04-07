@@ -1,0 +1,7 @@
+.CreatedPane {
+  padding: 10rem 0;
+}
+
+.bp3-non-ideal-state.CreatedPane {
+  height: 50%;
+}

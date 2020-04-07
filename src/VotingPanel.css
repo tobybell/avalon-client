@@ -1,0 +1,16 @@
+.VotingPanel {
+  padding: 10rem 0;
+}
+
+.VotingPanel.bp3-non-ideal-state {
+  height: 50%;
+}
+
+.VotingPanel-options {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.VotingPanel-options > :not(:first-child) {
+  margin-left: 1rem;
+}

@@ -1,0 +1,11 @@
+.ProposePanel {
+  padding: 10rem 0;
+}
+
+.ProposePanel.bp3-non-ideal-state {
+  height: 50%;
+}
+
+.ProposePanel-form {
+  text-align: left;
+}

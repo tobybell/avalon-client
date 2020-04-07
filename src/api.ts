@@ -1,10 +1,12 @@
+import { Event } from "./models/avalon";
+
 type GameID = string;
 
-export function sendEvent(event: any) {
-  const method = "GET";
+export function sendEvent(event: Event) {
+  const method = "POST";
   const body = JSON.stringify(event);
   const headers = { "Content-Type": "application/json;charset=utf-8" };
-  fetch("/games/576", { method, headers, body });
+  return fetch("/games", { method, headers, body }).then();
 }
 
 export async function fetchHistory(game: GameID): Promise<any[]> {

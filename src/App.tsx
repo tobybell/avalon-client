@@ -1,30 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { fetchHistory } from './api';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from "react-router-dom";
+
+import { NoGame } from "./NoGame";
+import { Game } from "./Game";
 
 function App() {
-  React.useEffect(() => {
-    fetchHistory("567").then(console.log);
-  }, []);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={NoGame} />
+        <Route exact path="/:gameId" component={Game} />
+      </Switch>
+    </Router>
   );
 }
 

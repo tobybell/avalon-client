@@ -1,0 +1,33 @@
+.Game {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  overflow-y: scroll;
+}
+
+.Game-scroller {
+  flex-grow: 1;
+  flex-shrink: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: stretch;
+}
+
+.Game .EventList {
+  flex-grow: 1;
+}
+
+.Game .JoinBar,
+.Game .StartBar,
+.Game .StatusBar {
+  display: flex;
+  justify-content: center;
+}
+
+.StatusPanel {
+  padding: 10rem 0;
+}
+
+.StatusPanel.bp3-non-ideal-state {
+  height: 50%;
+}

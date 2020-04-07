@@ -1,0 +1,7 @@
+.RolesPanel {
+  padding: 10rem 0;
+}
+
+.RolesPanel.bp3-non-ideal-state {
+  height: 50%;
+}

@@ -1,0 +1,7 @@
+.GameRecordPanel {
+  padding: 10rem 0;
+}
+
+.GameRecordPanel.bp3-non-ideal-state {
+  height: 50%;
+}

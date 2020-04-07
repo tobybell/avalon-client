@@ -1,0 +1,16 @@
+.QuestRecordPanel {
+  padding: 10rem 0;
+}
+
+.QuestRecordPanel.bp3-non-ideal-state {
+  height: 50%;
+}
+
+.QuestRecordPanel-trials {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.QuestRecordPanel-trials > :not(:first-child) {
+  margin-left: 1rem;
+}
