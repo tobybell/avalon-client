@@ -1,0 +1,7 @@
+.StartPanel {
+  padding: 10rem 0;
+}
+
+.StartPanel.bp3-non-ideal-state {
+  height: 50%;
+}

@@ -2,7 +2,7 @@ import * as React from "react";
 import { useParams } from "react-router-dom";
 import { NonIdealState, Spinner, Navbar, Button } from "@blueprintjs/core";
 
-import { sendEvent } from "./api";
+import { sendEvent, gameSocket } from "./api";
 import { get as getAgent } from "./models/agent";
 import { Event, GameHistory, GameId, joinGame, startGame, gamePlayers, gamePhase, canJoin, proposer, agentPossessive, missionSize, canStart } from "./models/avalon";
 import { CreatedPane } from "./CreatedPane";
@@ -18,6 +18,7 @@ import { stateMachine } from "./models/combines";
 import { Record } from "./models/records";
 import { QuestRecordPanel } from "./QuestRecordPanel";
 import { GameRecordPanel } from "./GameRecordPanel";
+import { StartPanel } from "./StartPanel";
 
 function renderRecord(record: Record, i: number) {
   if (record.type === "game") {
@@ -89,7 +90,7 @@ export function Game() {
   const [game, dispatch] = React.useReducer(reduceEvents, undefined);
 
   React.useEffect(() => {
-    const ws = new WebSocket(`ws://${window.location.hostname}:3001/games/${gameId}`);
+    const ws = gameSocket(gameId!);
     ws.onmessage = m => {
       try {
         const event = JSON.parse(m.data);
@@ -123,6 +124,8 @@ function LoadedGame({ id, game }: { id: GameId, game: GameHistory }) {
     <div className="Game">
       <div className="Game-scroller">
         <RecordsList records={records} />
+        {phase.type === "new" &&
+          <StartPanel players={phase.players} />}
         {phase.type === "new" && canStart(phase, me) &&
           <StartBar game={id} />}
         {canJoin(game) && <JoinBar game={id} />}

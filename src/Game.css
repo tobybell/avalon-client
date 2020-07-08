@@ -1,17 +1,11 @@
 .Game {
   height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
   overflow-y: scroll;
 }
 
-.Game-scroller {
-  flex-grow: 1;
-  flex-shrink: 0;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: stretch;
-}
+/* .Game-scroller {
+ */
+/* } */
 
 .Game .EventList {
   flex-grow: 1;
@@ -20,6 +14,8 @@
 .Game .JoinBar,
 .Game .StartBar,
 .Game .StatusBar {
+  position: absolute;
+  bottom: 0;
   display: flex;
   justify-content: center;
 }
